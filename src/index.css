@@ -11,8 +11,8 @@ code {
 }
 
 .sideMenu {
- 
-  background-color: rgb(143, 18, 205);
+  /* background-color: rgba(3, 28, 48, 1); */
+  background-color: rgb(51, 49, 52);
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   width: 100px;
   height: 100%;
@@ -45,7 +45,7 @@ code {
   max-width: 100%; /* Set a maximum width */
   border-radius: 5px;
   height: 400px;
-  margin-top: 20px;
+ 
   /* flex-wrap: wrap; */
   overflow-y: hidden;
 }
@@ -111,7 +111,7 @@ code {
 }
 
 .rightMenu {
-  background-color: green;
+  /* background-color: rgba(123, 97, 255, 1); */
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   width: 280px;
   height: 100%;
@@ -250,3 +250,33 @@ code {
 /* .mapboxgl-marker {
   transform: none !important
 }  */
+
+.filterList{
+  display: flex;
+}
+.menu{
+ margin: 1px;
+ margin-right: 40px;
+ cursor: pointer;
+ font-weight: 600;
+ color: white;
+}
+.activemenu{
+  border-bottom: 2px solid green;
+  /* color: rgb(128, 122, 0); */
+}
+.droneActive{
+  background-color: green
+}
+.droneDisable{
+  background-color: red
+}
+.droneInActive{
+  background-color: gray;
+}
+
+.custom-marker {
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}

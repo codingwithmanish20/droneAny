@@ -11,16 +11,18 @@ const GridData = ({ droneinfo, data }) => {
         <div className="cardBox">
           {data.map((item, index) => (
             <>
-            {console.log(item.battery,'listItem')}
+              {console.log(item, "listItem")}
               <div
                 key={index}
-                className={`box ${item.battery < "70%" ? "status-code":""} ${item.Gsm_signal == "good" ? "goodSignal" : "badSignal"}`}
-                style={{ background: item.Drone_color}}
+                className={`box ${item.battery < 40 ? "status-code" : ""} ${
+                  item.Gsm_signal == "good" ? "goodSignal" : "badSignal"
+                } ${item.status == "active" ? "droneActive" : "droneDisable"} ${item.status=="inactive" && "droneInActive"}`}
+              
                 onClick={() => droneinfo(item)}
               >
                 <div className="boxData">
                   {/* <p className="nametext">{item.dronename}</p> */}
-                  <p className="nametext">{index+1}s</p>
+                  <p className="nametext">{index + 1}s</p>
                   {/* <img src={batterylogo} alt="" width={15} height={15} /> */}
                 </div>
               </div>
@@ -33,21 +35,52 @@ const GridData = ({ droneinfo, data }) => {
 };
 
 const DroneCardGrid = ({ droneinfo }) => {
-  const [droneDetails,setDroneDetails] = useState(droneData);
-  console.log(droneDetails,'detailsdata')
-  const chunks = [];
-  for (let i = 0; i < droneData.length; i += 100) {
-    chunks.push(droneData.slice(i, i + 100));
+  const [droneDetails, setDroneDetails] = useState(droneData);
+  const [activemenu, setActiveMenu] = useState("All");
+
+  function DroneFilter(name) {
+    setActiveMenu(name);
+    if (name == "All") {
+      setDroneDetails(droneData);
+    } else if (name == "Active") {
+      console.log(droneData, "details");
+      let filterData = droneData.filter((item) => item.status == "active");
+      setDroneDetails(filterData);
+    } else if (name == "Disable") {
+      console.log(droneData, "itemdatadd");
+      let filterData = droneData.filter((item) => item.status == "disable");
+      setDroneDetails(filterData);
+    } else if (name == "Battery") {
+      let filterData = droneData.filter((item) => item.battery < 40);
+      setDroneDetails(filterData);
+    }
   }
 
-  const list = ['active','disable']
-  
+  const chunks = [];
+  for (let i = 0; i < droneDetails.length; i += 100) {
+    chunks.push(droneDetails.slice(i, i + 100));
+  }
+
+  const list = ["All", "Active", "Disable", "Battery"];
+
   return (
     <>
-    {/* flexData */}
+      {/* flexData */}
+      <div className="filterList">
+            {list.map((item) => (
+              <>
+                <div
+                  className={`menu ${item == activemenu ? "activemenu" : ""}`}
+                  onClick={() => DroneFilter(item)}
+                >
+                  {item}
+                </div>
+              </>
+            ))}
+          </div>
       <div className="droneContainer">
-        
         <div className="dronecard">
+          
           <div className="droneBox">
             {/* {droneData.map((item, index) => (
               <>
