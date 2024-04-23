@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Gridepage from './components/Gridepage';
+import { DroneCardGrid } from './components/DroneCard';
+import ErrorBoundary from './components/ErrorBoundary';
+import Mapboxgp from './components/Mapboxgp';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+    <Gridepage />
+    {/* <DroneCardGrid
+     /> */}
+    
+     
     </div>
   );
 }
