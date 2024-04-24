@@ -11,8 +11,8 @@ code {
 }
 
 .sideMenu {
-  /* background-color: rgba(3, 28, 48, 1); */
-  background-color: rgb(51, 49, 52);
+  background-color: rgb(59, 156, 235);
+ 
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   width: 100px;
   height: 100%;
@@ -38,7 +38,6 @@ code {
 
 .dronecard {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-
   /* border: 2px solid black; */
   width: 1070px; /* Allow width to grow dynamically based on content */
 
@@ -56,6 +55,7 @@ code {
 .droneContainer {
   display: flex;
   justify-content: center;
+  background-color: #1e18c5;
 }
 
 .mapCard {
@@ -111,7 +111,7 @@ code {
 }
 
 .rightMenu {
-  /* background-color: rgba(123, 97, 255, 1); */
+  background-color: green;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   width: 280px;
   height: 100%;
@@ -138,8 +138,8 @@ code {
 .boxmodel {
   background-color: black;
   height: 400px;
-  margin-left: 10px;
-  margin-right: 10px;
+  /* margin-left: 10px;
+  margin-right: 10px; */
   margin-top: auto;
 }
 

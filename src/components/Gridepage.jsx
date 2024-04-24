@@ -19,7 +19,6 @@ const Gridepage = () => {
             <Mapboxgp />
           </div>
         )}
-
         <SideMenuRight details={dronDetails} />
       </div>
     </div>

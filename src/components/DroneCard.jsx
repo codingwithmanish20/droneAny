@@ -55,7 +55,7 @@ const DroneCardGrid = ({ droneinfo }) => {
       setDroneDetails(filterData);
     }
   }
-
+  
   const chunks = [];
   for (let i = 0; i < droneDetails.length; i += 100) {
     chunks.push(droneDetails.slice(i, i + 100));
@@ -82,20 +82,18 @@ const DroneCardGrid = ({ droneinfo }) => {
         <div className="dronecard">
           
           <div className="droneBox">
+
             {/* {droneData.map((item, index) => (
               <>
-               
-                
-
                 <GridData
                   key={index}
                   droneinfo={droneinfo}
                   limit={index + 1}
                   initialLimit={index - 1}
                 />
-               
               </>
             ))} */}
+
 
             {chunks.map((chunk, index) => (
               <GridData key={index} droneinfo={droneinfo} data={chunk} />

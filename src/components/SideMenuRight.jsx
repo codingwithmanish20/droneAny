@@ -6,11 +6,11 @@ const SideMenuRight = ({ details }) => {
       <div className="rightMenu">
         <div className="leftspace">
           <div className="errorLogs">
-            <p className="textFont">Drone status : {details.status}</p>
-            <p className="textFont">Drone NO : {details.dronename}</p>
-            <p className="textFont">Battery Status : {details.battery}</p>
-            <p className="textFont">Drone Color : {details.Drone_color}</p>
-            <p className="textFont"> Gsm_signal  : {details.Gsm_signal}</p>
+            <p className="textFont" style={{fontFamily:"sans-serif", fontSize:"16px", marginBottom:"16px" }}  >Drone status : {details.status}</p>
+            <p className="textFont" style={{fontFamily:"sans-serif", fontSize:"12px", marginBottom:"12px" }} >Drone NO : {details.dronename}</p>
+            <p className="textFont" style={{fontFamily:"sans-serif", fontSize:"12px", marginBottom:"12px" }}>Battery Status : {details.battery}</p>
+            <p className="textFont" style={{fontFamily:"sans-serif", fontSize:"12px", marginBottom:"12px" }}>Drone Color : {details.Drone_color}</p>
+            <p className="textFont"style={{fontFamily:"sans-serif", fontSize:"12px", marginBottom:"12px" }}> Gps_signal  : {details.Gsm_signal}</p>
           </div>
 
           <div className="boxmodel"></div>
