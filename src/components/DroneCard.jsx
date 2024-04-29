@@ -5,20 +5,29 @@ import InactiveDrone from "../DataList/InactiveDrone";
 import batterylogo from "../images/battery-charge.png";
 
 const GridData = ({ droneinfo, data }) => {
+  const [selectedBox, setSelectedBox] = useState("");
+  function onClickBox(item) {
+    droneinfo(item);
+    setSelectedBox(item.id);
+  }
   return (
     <>
       <div className="boxContainer">
         <div className="cardBox">
           {data.map((item, index) => (
             <>
-              {console.log(item, "listItem")}
               <div
                 key={index}
-                className={`box ${item.battery < 40 ? "status-code" : ""} ${
-                  item.Gsm_signal == "good" ? "goodSignal" : "badSignal"
-                } ${item.status == "active" ? "droneActive" : "droneDisable"} ${item.status=="inactive" && "droneInActive"}`}
-              
-                onClick={() => droneinfo(item)}
+                className={`box ${
+                  item.status !== "inactive" &&
+                  item.battery < 40 &&
+                  "status-code"
+                } ${item.Gsm_signal == "good" && "goodSignal"} ${
+                  item.status == "active" ? "droneActive" : "droneDisable"
+                } ${item.status == "inactive" && "droneInActive"} ${
+                  item.Gsm_signal == "bad" && "badSignal"
+                } ${selectedBox == item.id && "selectedBox"}`}
+                onClick={() => onClickBox(item)}
               >
                 <div className="boxData">
                   {/* <p className="nametext">{item.dronename}</p> */}
@@ -67,20 +76,19 @@ const DroneCardGrid = ({ droneinfo }) => {
     <>
       {/* flexData */}
       <div className="filterList">
-            {list.map((item) => (
-              <>
-                <div
-                  className={`menu ${item == activemenu ? "activemenu" : ""}`}
-                  onClick={() => DroneFilter(item)}
-                >
-                  {item}
-                </div>
-              </>
-            ))}
-          </div>
+        {list.map((item) => (
+          <>
+            <div
+              className={`menu ${item == activemenu ? "activemenu" : ""}`}
+              onClick={() => DroneFilter(item)}
+            >
+              {item}
+            </div>
+          </>
+        ))}
+      </div>
       <div className="droneContainer">
         <div className="dronecard">
-          
           <div className="droneBox">
             {/* {droneData.map((item, index) => (
               <>
@@ -111,7 +119,9 @@ const DroneCard = ({ getDrone }) => {
   return (
     <div>
       <DroneCardGrid droneinfo={getDrone} />
-      <Mapboxgp />
+      <div className="logContainer">
+        <Mapboxgp />
+      </div>
 
       {/* <GridData /> */}
     </div>

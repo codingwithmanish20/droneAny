@@ -19,8 +19,11 @@ const Gridepage = () => {
             <Mapboxgp />
           </div>
         )}
+        <div className="logContainer"> 
 
-        <SideMenuRight details={dronDetails} />
+        <SideMenuRight details={dronDetails}  />
+        </div>
+
       </div>
     </div>
   );

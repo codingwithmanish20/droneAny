@@ -191,6 +191,7 @@ code {
 .boxContainer {
   /* width: 270px; */
   margin: 2px;
+  margin-left: 4px;
 }
 
 .table {
@@ -279,4 +280,28 @@ code {
   background-size: cover;
   border-radius: 50%;
   cursor: pointer;
+}
+#map {
+  background-color: #fff; /* Set the background color to white */
+}
+.logContainer{
+  display: block;
+}
+@media screen and (max-width: 425px) {
+  .logContainer {
+    display: none;
+  }
+  .dronecard{
+    width: 200PX;
+  }
+  .mapCard{
+    width: 200PX;
+  }
+  .menu{
+    margin-right: 10PX;
+  }
+}
+
+.selectedBox{
+  background-color: rgb(143, 72, 10);
 }

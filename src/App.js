@@ -1,20 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Gridepage from './components/Gridepage';
-import { DroneCardGrid } from './components/DroneCard';
-import ErrorBoundary from './components/ErrorBoundary';
-import Mapboxgp from './components/Mapboxgp';
+import logo from "./logo.svg";
+import "./App.css";
+import Gridepage from "./components/Gridepage";
+import { DroneCardGrid } from "./components/DroneCard";
+import Mapboxgp from "./components/Mapboxgp";
+import OpenLayerMap from "./components/OpenLayerMap";
 
 function App() {
   return (
-    <div>
-      
-    <Gridepage />
-    {/* <DroneCardGrid
-     /> */}
-    
-     
-    </div>
+    <>
+      <Gridepage />
+    </>
   );
 }
 
